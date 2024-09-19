@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8 ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        padding: 50px;
+        align-items: flex-start;
+    }
+    .intro {
+        max-width: 100%;
+    }
+    .imgg {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .services, .cta, .contact-us {
+        padding: 20px;
+    }
+    .course-card {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .course-image img {
+        width: 100%;
+        height: auto;
+    }
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+    .service-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .section2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .butt {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .map-container iframe {
+        width: 100%;
+        height: 200px;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}    
+.main {
+    display: flex;
+    padding: 100px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.intro {
+    max-width: 50%;
+}
+.imgg {
+    position: relative;
+    bottom: 150px;
+    right: 200px;
+    width: 400px;
+}
+.imagemove {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 400px;
+}
+.imagemove1 {
+    position: absolute;
+    left: 200px; 
+    z-index: 0;
+    width: 300px;
+}
+.imagemove2 {
+    position: absolute;
+    left: 200px; 
+    z-index: 0;
+    width: 300px;
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+.services {
+
+    padding-top: 150px;
+}
+.service-item {
+    margin: 20px auto7+/
+    display: inline-block;
+    text-align: left;
+    max-width: 300px;
+}
+.course-buttons {
+    margin: 20px 0;
+    display: block;
+}
+.course-buttons button {
+    display: inline-block;
+    margin: 5px;
+}
+.course-details {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
+}
+.cta {
+    padding: 20px;
+    text-align: center;
+}
+.cta img {
+    max-width: 100%;
+}
+.cta-text {
+    margin: 20px auto;
+}
+footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: auto;
+}
+footer form label {
+    margin: 10px 0 5px;
+}
+footer form input, footer form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+footer form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.footer-info {
+    margin-top: 20px;
+}
+.footer-info p {
+    margin: 5px 0;
+}
+.section2{
+    display: flex;
+    padding-left: 90px;
+}
+.butt {
+    width: 300px;
+    height: 70px;
+    border: 2px solid purple; 
+    border-radius: 5px; 
+    background-color: transparent; 
+    color: black; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    text-align: center; 
+    line-height: 50px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+.butt:hover {
+    color: purple; 
+}
+.course-card {
+    display: flex;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 900px; 
+    margin: 20px auto; 
+    background-color: #fff; 
+}
+.course-image img {
+    width: 300px; 
+    height: 300px; 
+    display: block;
+}
+.course-details {
+    padding: 20px; 
+}
+.cta {
+    position: relative; 
+    text-align: center; 
+    color: #fff; 
+    padding: 40px 20px; 
+}
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+.background-image img {
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
+.imageposition {
+    position: relative; 
+    z-index: 2; 
+    padding: 20px; 
+}
+.cta {
+    color:#fff; 
+    padding: 40px 20px;
+}
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+.background-image img {
+    width: 100%; 
+    height: auto; 
+    display: block;
+}
+.imageposition {
+    display: flex;
+    position: relative; 
+    z-index: 2; 
+    padding: 50px; 
+}
+.overlay-image img {
+    width: 300px; 
+}
+.cta-text button {
+    padding: 10px 20px;
+    background-color: #333; 
+    color: #fff; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size:16px;
+}
+.cta-text button:hover {
+    background-color: purple; 
+}
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+
+}
+.testimonial-container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+.testimonial {
+    flex: 1;
+    max-width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.379) ;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    position:bottom;
+}
+.testimonial img {
+    display: block;
+    margin: 10px auto 0; 
+}
+.services {
+    text-align: center;
+    padding: 50px 0;
+}
+.service-item {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    height: 200px; 
+    display: inline-block;
+    color: #333;
+}
+.service-item b {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.service-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.contact-us {
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+.map-container {
+    position:absolute;
+    height: 250px;
+    padding:20px;
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.contact-info .icon {
+    font-size: 2em;
+    color: #ff6f61;
+    margin-right: 15px;
+}
+.contact-info h6 {
+    margin: 0;
+    font-weight: bold;
+}
+.contact-info p {
+    margin: 0;
+    color: #888;
+}
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.contact-form h4 {
+    color: #666;
+    margin-bottom: 10px;
+}
+.contact-form h2 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+.contact-form p {
+    color: #999;
+    margin-bottom: 30px;
+}
+.contact-form .form-control {
+    border-radius: 5px;
+    padding: 15px;
+}
+.contact-form .btn-primary {
+    background: linear-gradient(45deg, #f05f57, #f9d423);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.contact-form .btn-primary:hover {
+    background: linear-gradient(45deg, #f05f57, #f9a423);
+}
+.footer {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.social-icons li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.social-icons li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f05f57, #f9d423);
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+.social-icons li a:hover {
+    background: linear-gradient(45deg, #f05f57, #f9a423);
+}
+.footer p {
+    margin: 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+.contact-us {
+    position: relative;
+    padding: 40px 0;
+}
+.map-background {
+    position: absolute;
+    top: 300px; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+    overflow: hidden;
+}
+.map-background img {
+    width: 100%;
+    height: auto; 
+    position: absolute;
+    left: 0;
+    object-fit: cover; 
+    z-index:-6; 
+}
+.container {
+    position: relative;
+    width:100%;
+    height:auto;
+}
+.map-container iframe {
+    border: 0;
+    position:absolute;
+    z-index:-2;
+}
+.map-container iframe:hover{
+    background: linear-gradient(45deg,#f05f57,#f9d423);
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+.contact-info .icon {
+    margin-right: 10px;
+}
+.contact-info .text h6 {
+    margin: 0;
+    font-weight: bold;
+}
+.contact-info .text p {
+    margin: 0;
+}
+.contact-form h4, .contact-form h2, .contact-form p {
+    margin: 10px 0;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+</style>
+</head>
+<body>
+<header>
+      <nav style="background-image: url('./header-bg.png'); padding: 20px; width: 100%;"> 
+        <div class="d-flex flex-row justify-content-between align-items-center"> 
+            <img src="./templatemo-eduwell.png" alt="Logo" class="logo me-5" style="position: relative; right: 300px;">
+        <div class="menu d-flex flex-row justify-content-between align-items-center" style="position: relative; left: 300px; color: white;">
+                <a href="#" class="nav-link ms-3">Home</a>
+                <a href="#" class="nav-link ms-3">Services</a>
+                <a href="#" class="nav-link ms-3">Courses</a>
+                <a href="#" class="nav-link ms-3">Pages</a>
+                <a href="#" class="nav-link ms-3">Testimonials</a>
+                <a href="#" class="nav-link ms-3">Contact Us</a>
+            </div>
+        </div> 
+    </nav>
+    </header>
+     <main class="main">
+        <div class="intro">
+            <p style="font-weight: bold;">Welcome to Our School</p>
+            <h1  style="font-weight: bolder;">Best Place To<br>Learn Graphic  <br/><span style="color: palevioletred;font-weight: bolder;"> Design! </span></h1>
+            <button class="btn " style="font-weight: bolder; background-color: palevioletred;color: white;font-size: 15px;">JOIN US NOW</button>
+        </div>
+        <div class="imgg">
+            <img src="./banner-right-image (1).png" class="imagemove" alt="Banner Image">
+            <img src="./banner-right-dec (1).png" class="imagemove1" alt="Decoration Image">
+        </div>
+    </main>
+    <section id="services" style="background-image: url('./banner-left-dec (1).png'); background-repeat: no-repeat;margin-top: 200px;">
+        <p>OUR SERVICES</p>
+        <h2>Provided <span style="color: pink;">Services</span></h2>
+        <div style="margin-top: 50px;">
+        <div class="service-item"  style="margin-left: 130px;">
+            <img src="./service-icon-03 (1).png">
+         <b>Ready Target</b>
+          <P>Please tell your friends about best CSS template website that is TemplateMo</p>
+        </div>
+        <div class="service-item" >
+            <img src="./service-icon-04.png">
+            <b>Technology</b>
+            <p>Aenean bibendum consectetur exeu porttitor. Pellentesque id ultrices metus</p>
+        </div>
+        <div class="service-item" >
+            <img src="./service-icon-01.png">
+            <b>Useful Tricks</b>
+            <p>In non nisi eget magna efficitur ultricies non quis sapien Pellentesque tellus</p>
+        </div>
+        <div class="service-item">
+            <img src="./service-icon-02 (1).png">
+            <b>Creative Ideas</b>
+            <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus</p>
+        </div>
+     <section id="courses" style="background-image: url('./our-courses-left-dec (1).png'); background-repeat: no-repeat;margin-top: 200px;">
+     <section id="courses" style="background-image: url('./our-courses-right-dec (1).png'); background-repeat: no-repeat;margin-left:900px;float:left;"></section><br><br>
+     <section id="courses" class="courses"></section>
+      <p>OUR COURSES</p>
+        <h1>What you can <span style="color: pink;">Learn</span></h1>
+        <p>You just think TemplateMo whenever you need free CSS templates for your business website</p>
+        <div class="section2">
+        <div class="course-buttons">
+            <button class="butt" style="border: palevioletred 2px solid;box-shadow: 2px 2px 2px 2px palevioletred;">Web Development</button><br>
+            <button class="butt">Graphic Design</button><br>
+            <button class="butt">Web Design</button><br>
+            <button class="butt">WordPress</button><br>
+        </div>
+        <div class="course-card">
+            <div class="course-image">
+                <img src="./courses-01.jpg" alt="Web Development">
+            </div>
+            <div class="course-details">
+                <h3>Web Development</h3>
+                <p>Did you know that you can visit the TooCSS website for the latest listing of HTML templates and a variety of useful templates?</p>
+                <p>You just need to go and visit that website right now. If you have any suggestions or comments about this template, feel free to go to the contact page for our email address.</p>
+                <ul>
+                    <span>36 Hours</span> 
+                    <span>4 Weeks</span> 
+                    <span>3 Certificates</span>
+                </ul>
+                <p>Subscribe Courses</p>
+            </div>
+        </div>
+        </div>
+    </section>
+   <section class="cta">
+        <div class="background-image">
+            <img src="./cta-bg.png" alt="Background Image">
+        </div>
+        <div class="imageposition">
+            <div class="overlay-image">
+                <img src="./cta-left-image.png" alt="Call to Action">
+            </div>
+            <div class="cta-text">
+                <p>Get the sale right now!</p>
+                <h1>Up to 50% OFF<br>For 1+ courses</h1>
+                <p>Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them</br></p> 
+                  <p>cliche la croix af chillwave</p>
+                <button>VIEW COURSES</button>
+            </div>
+      </div>
+    </section>
+</br>
+</br>
+</br>
+<section id="services" style="background-image: url('./testimonials-left-dec.png'); background-repeat: no-repeat;margin-top: 200px;"></br>
+    <section class="testimonials">
+        <p>TESTIMONIALS</p>
+        <h2>What They <span style="color: pink;">Think</span></h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem."</p>
+                <h3>Andrew Hall</h3>
+                <p>Marketing Manager</p>
+                <img src="./quote.png" alt="Quote Icon">
+            </div>
+            <div class="testimonial">
+                <p>"Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem."</p>
+                <h3>Maxi Power</h3>
+                <p>Fashion Designer</p>
+                <img src="./quote.png" alt="Quote Icon">
+            </div>
+            <div class="testimonial">
+                <p>"Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem."</p>
+                <h3>Olivia Too</h3>
+                <p>Creative Designer</p>
+                <img src="./quote.png" alt="Quote Icon">
+            </div>
+            </div>
+<img src="./testimonials-right-dec.png" style="margin-left: 800px; position: relative; bottom: 200px;">
+</section>
+    <section class="contact-us">
+        <div class="map-background">
+            <img src="./footer-bg.png" alt="Background Image">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="map-container">
+                        <img src="./footer-left-dec.png">
+                <section id="services" style="background-image:url('./footer-left-dec.png');background-repeat:no-repeat margin-top: 200px"></div>
+                        <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.510331327319!2d-122.1972293843695!3d47.590984479185616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549073c0180f04d7%3A0xfcdc2f13d4ad1e29!2sNewcastle%20Beach%20Park!5e0!3m2!1sen!2sus!4v1661533278583!5m2!1sen!2sus"
+                        width="100%" height="250" style="border:0; z-index: -1;" allowfullscreen="" loading="lazy";></iframe> 
+                    </div>
+                     <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="text">
+                                    <h6>PHONE</h6>
+                                    <p>010-020-0340</p>
+                                </div>
+                            </div>
+            
+                    </div>
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <div class="icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="text">
+                                    <h6>MOBILE</h6>
+                                    <p>090-080-0760</p>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                 <div class="col-md-6">
+                    <div class="contact-form">
+                        <h4>CONTACT US</h4>
+                        <h2><strong>Say Hello</strong></h2>
+                        <p>If you need a working contact form by PHP script, please visit TemplateMo's contact page for more info.</p>
+                        <form action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"><img src="./fbicon.png" weight="40px" height="40px"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"><img src="./twittericon.webp" weight="40px" height="40px"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"><img src="./linkedin.png" weight="40px" height="40px"></i></a></li>
+                    <li><a href="#"><i class="fab fa-rss"><img src="./rss.jpg" weight="40px" height="40px"></i></a></li>
+                    <li><a href="#"><i class="fab fa-dribbble"><img src="./dribble 4.jpg" weight="40px" height="40px" ></i></a></li>
+                </ul>
+            </div>
+            </div>
+        <div class="row mt-3">
+           <div class="col-md-12 text-center">
+                <p>Copyright © 2022 EduWell Co., Ltd. All Rights Reserved.</p>
+                <p>Design: TemplateMo</p>
+            </div>
+            </div>
+        </body>
+        </html>
+
+
+
+
+
+       
